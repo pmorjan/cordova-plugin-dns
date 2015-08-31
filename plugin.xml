@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+           id="de.pmorjan.cordova.plugin.dns"
+      version="0.0.1">
+    <name>DNS</name>
+    <license>BSD</license>
+
+     <js-module src="www/dns.js" name="dns">
+         <clobbers target="cordova.plugins.dns" />
+     </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="DNS" >
+                <param name="android-package" value="de.pmorjan.cordova.plugin.dns.DNS"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/DNS.java" target-dir="src/de/pmorjan/cordova/plugin/dns" />
+    </platform>
+</plugin>
